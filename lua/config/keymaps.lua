@@ -15,15 +15,17 @@ keymap.set("n", "<Leader>w", ":update<Return>", opts)
 keymap.set("n", "<Leader>q", ":quit<Return>", opts)
 keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 
--- File explorer with NvimTree
-keymap.set("n", "<Leader>f", ":NvimTreeFindFile<Return>", opts)
-keymap.set("n", "<Leader>t", ":NvimTreeToggle<Return>", opts)
-
 -- Tabs
 keymap.set("n", "te", ":tabedit")
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 keymap.set("n", "tw", ":tabclose<Return>", opts)
+
+-- tmux
+keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>")
+keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>")
+keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>")
+keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>")
 
 -- Split window
 keymap.set("n", "ss", ":split<Return>", opts)
@@ -42,6 +44,6 @@ keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
 
 -- Diagnostics
-keymap.set("n", "<C-j>", function()
+keymap.set("n", "<C-s-e>", function()
   vim.diagnostic.goto_next()
 end, opts)
